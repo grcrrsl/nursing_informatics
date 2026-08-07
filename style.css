@@ -150,6 +150,31 @@
   .era-intro{
     padding: 26px 0;
   }
+ /* ==========================
+   Members Intro
+========================== */
+
+.era-panel[data-era-panel="telehealth"] .era-intro{
+    width:780px;
+    margin:0 auto 24px;
+    padding:0;
+}
+
+.era-panel[data-era-panel="telehealth"] .era-intro h2{
+    font-family:"Fraunces", serif;
+    font-size:42px;
+    font-weight:600;
+    margin:0 0 12px;
+}
+
+.era-panel[data-era-panel="telehealth"] .era-intro p{
+    max-width:620px;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    margin:0;
+}
+
   .era-intro h2{
     font-family:"Fraunces", serif;
     font-weight:600;
@@ -604,17 +629,14 @@
 ========================== */
 
 .members-grid{
-
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:22px;
-
-    margin-top:35px;
-
+    grid-template-columns:repeat(2, minmax(280px, 380px));
+    justify-content:center;
+    gap:20px;
+    margin:28px auto 0;
 }
 
 .member-card{
-
     background:linear-gradient(
         145deg,
         var(--paper),
@@ -622,65 +644,75 @@
     );
 
     border:1px solid rgba(34,32,27,.12);
-    border-radius:22px;
+    border-radius:18px;
 
-    padding:24px;
+    padding:20px 22px;
+
+    min-height:130px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 
     box-shadow:
         0 1px 0 rgba(255,255,255,.45) inset,
-        0 8px 18px rgba(34,32,27,.08);
+        0 6px 14px rgba(34,32,27,.08);
 
     transition:.25s ease;
-
 }
 
 .member-card:hover{
-
-    transform:translateY(-5px);
+    transform:translateY(-4px);
 
     border-color:rgba(107,45,92,.35);
 
     box-shadow:
-        0 1px 0 rgba(255,255,255,.45) inset,
-        0 14px 30px rgba(34,32,27,.14);
-
+        0 10px 20px rgba(34,32,27,.14);
 }
 
 .member-role{
-
     display:inline-block;
+    margin-bottom:10px;
 
     font-family:"IBM Plex Mono", monospace;
-    font-size:11px;
+    font-size:10px;
     letter-spacing:.12em;
     text-transform:uppercase;
 
     color:var(--brick);
-
-    margin-bottom:10px;
-
 }
 
 .member-card h3{
-
     margin:0;
 
     font-family:"Fraunces", serif;
-    font-size:22px;
+    font-size:18px;
+    line-height:1.35;
     font-weight:600;
 
-    line-height:1.4;
-
     color:var(--ink);
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+    .members-grid{
+        grid-template-columns:repeat(2, minmax(260px,1fr));
+    }
 
 }
 
-@media(max-width:768px){
+/* Mobile */
+
+@media (max-width:768px){
 
     .members-grid{
-
         grid-template-columns:1fr;
+    }
 
+    .member-card{
+        min-height:auto;
     }
 
 }
