@@ -401,15 +401,18 @@
     text-transform: uppercase;
   }
 
-  footer{
-    margin-top: 56px;
-    padding-top: 18px;
+ footer{
+    margin-top: 20px;          /* Reduced from 56px */
+    padding: 20px 0 10px;
     border-top: 1px solid var(--line);
-    font-family:"IBM Plex Mono", monospace;
+
+    text-align: center;
+
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: var(--ink-soft);
-    letter-spacing: 0.04em;
-  }
+    letter-spacing: .04em;
+}
 
   @media (max-width: 560px){
     .wrap{ padding: 32px 16px 80px; }
@@ -784,3 +787,4 @@
     }
 
 }
+
